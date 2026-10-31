@@ -1,49 +1,24 @@
 # LoRa-RS Firmware Hub
 
-Public release repository for **LoRa-RS** firmware and flasher binaries.
+Public releases for **Thanda LoRa Remote Switch (LRS)** firmware and **FieldOps Control** desktop packages.
 
-## What You Get Per Release
+- [Latest release and downloads](https://github.com/Thanda-Solar/lora-rs-firmware/releases/latest)
+- [All releases](https://github.com/Thanda-Solar/lora-rs-firmware/releases)
+- [Website, manuals and installation guidance](https://lora.thanda.solar/)
 
-Each release tag (for example `v0.5.8-alpha`) is expected to include:
+This repository moved from `warwickchapman/lora-rs-firmware` to `Thanda-Solar/lora-rs-firmware`. GitHub redirects the old repository, release and download URLs. Leave the former repository name unused to preserve those redirects.
 
-- Firmware binaries
-  - `lrs-firmware-<version>-za.bin`
-  - `lrs-firmware-<version>-us.bin`
-  - `lrs-firmware-<version>-eu.bin`
-- Flasher desktop binaries
-  - macOS: arm64 + x64 DMG
-  - Windows: setup EXE + MSI + portable ZIP
-  - Linux: `.deb` + `.rpm` + `.AppImage.tar.gz`
-- `SHA256SUMS.txt` for asset integrity verification
+## Release assets
 
-## Region Notes
+Each release lists its available assets and release notes. Current releases provide:
 
-- `US` build uses LoRa **915 MHz** defaults.
-- `ZA` and `EU` builds currently use LoRa **433 MHz** defaults.
+- Regional firmware binaries and matching `.upgrade.json` manifests: `433_za`, `433_eu` and `915_us`.
+- macOS portable ZIP packages for Apple Silicon and Intel.
+- Windows MSI and portable ZIP packages.
+- Linux DEB, RPM and AppImage archives.
 
-## Verify Downloads
+ZA and EU profiles use 433 MHz; the US profile uses 915 MHz. Select the firmware profile for your installation. Use the published Control application and the manual for installation and upgrade instructions.
 
-From a terminal in your downloads folder:
+If a release provides `SHA256SUMS.txt`, verify downloads with `sha256sum -c SHA256SUMS.txt` on Linux or `shasum -a 256 -c SHA256SUMS.txt` on macOS.
 
-```bash
-sha256sum -c SHA256SUMS.txt
-```
-
-On macOS:
-
-```bash
-shasum -a 256 -c SHA256SUMS.txt
-```
-
-## Install / Flash
-
-- End users should use the released **Thanda LoRa Flasher** desktop app.
-- Advanced users can flash firmware directly using `esptool` if needed.
-
-## Source Repository
-
-Main development repository:
-
-- https://github.com/warwickchapman/lora-rs
-
-Release notes for each tag contain feature-focused highlights and known changes.
+Development source is private. Customer documentation and downloads are available through the public links above.
